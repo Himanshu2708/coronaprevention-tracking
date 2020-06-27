@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device,initial scale=1"> 
+	<title>demo </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body onload="fetch()">
+
+
+<div id="safe">
+<h1>Precautions and tracking of covid-19</h1>
+</div>
+
+<h2 class="head"> SAFETY MEASURES FOR COVID 19</h2>
+
+<h3 class="mask">1. Wear Mask</h3>
+<img src="mask.jpg" class="image">
+
+<p>Wearing the mask is one of the necessities in today's life. When we wear a mask, then we can protect ourselves from being in contact with coronavirus. Also, if a person nearby you sneezes, then it will act as a safety shield by not letting the germs released by that person enter your mouth. Also, wash your mask daily after use.</p>
+
+<h3 class="mask">2. Sanitization</h3>
+<img src="sanitizer.jpg" class="image">
+<p>
+Always carry sanitizer whenever you are going out of your home and always use it whenever you a touch a surface that you think might have been touched by other people. You can also use it to sanitize the products you bought from the market. Sanitization has also become part of our daily life
+</p>
+
+<h3 class="mask">3. Avoid Hand Shake</h3>
+<img src="hand shake.jpg" class="image">
+<p>
+Avoid handshake as this may lead to coronavirus transmission. But you might say, that every person can't be coronavirus positive. Yes, it is true, but as we all know that many people especially in india are asymptomatic. So, to not come in contact with the virus, this is adviced. And nowadays, entire world has stopped this
+</p>
+
+<h3 class="mask">4. Consult Your Doctor</h3>
+<img src="doctor.jpg" class="image">
+<p>
+Whenever you feel that you have symptoms of coronavirus, then immediately contact your doctor. Isolate yourself. Do not take any medicine without consulting your doctor. If you are tested positive, then don't panic, just follow doctor's advice;
+</p>
+
+<h3 class="mask">5. Avoid Social Gathering</h3>
+<img src="social gathering.jpg" class="image">
+
+<p>
+Avoid social gathering as much as possible. This is important because, in social gathering there is high risk of transmission of virus, Also, if it can't be avoided, don't forget to wear mask and take sanitizer with you
+</p>
+
+
+
+<h2 class="container">CORONA VIRUS DATEWISE TRACKING</h3>    
+<div class="data">
+<table class="table=responsive" id="covid">
+
+
+
+  <tr>
+    <th class="tc">Country</th>
+    <th class="td">Total Confirmed</th>
+    <th class="td">Total Deaths</th>
+
+    <th class="dr">Total Recovered</th>
+    </tr>	
+  </table>
+<script>
+
+function fetch()
+{
+  $.get("https://api.covid19api.com/summary",function(info)
+  {
+          console.log(info['Countries'].length);
+          var tbval=document.getElementById('covid');
+          for(var i=1;i<info['Countries'].length;i++)
+          {
+            var r=tbval.insertRow();
+            r.insertCell(0)
+
+
+             tbval.rows[i].cells[0].innerHTML=info['Countries'][i-1]['Country'];
+             tbval.rows[i].cells[0].style.background="pink";
+           
+
+              r.insertCell(1)
+              tbval.rows[i].cells[1].innerHTML=info['Countries'][i-1]['TotalConfirmed'];
+             tbval.rows[i].cells[1].style.background="pink";
+             
+               r.insertCell(2)
+              tbval.rows[i].cells[2].innerHTML=info['Countries'][i-1]['TotalDeaths'];
+             tbval.rows[i].cells[2].style.background="pink";
+
+               r.insertCell(3)
+              tbval.rows[i].cells[3].innerHTML=info['Countries'][i-1]['TotalRecovered'];
+             tbval.rows[i].cells[3].style.background="pink";
+
+              
+
+           
+
+
+
+          }
+
+  } 
+
+     )
+  
+
+
+
+}  
+</script> 
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+.info
+{
+ background-color:pink;
+
+
+}
+h2
+{
+	padding-left:500px;
+
+}
+
+h1
+{
+	padding-left:500px;
+
+}
+.data
+{
+	padding-left:400px;
+}
+
+#safe
+{
+	background-color:blue;
+}
+.image
+{
+	padding-left:50px;
+	height:500px;
+	width:auto;
+
+}
+
+
+h3
+{
+	padding-left:30px;
+}
+
+p
+{
+	font-size:20px;
+	padding-left:50px;
+}
+
+.tc
+{
+	background-color:blue;
+
+
+   }
+
+.td
+{
+	background-color:red;}
+
+.tr
+{
+	background-color:green;
+   
+}
+
+.dc
+{
+	background-color:yellow;
+  
+}
+
+.dd
+{  
+	background-color:red;
+}
+
+.dr
+{  
+	background-color:green;
+}
